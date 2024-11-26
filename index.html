@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貯金シミュレーション</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>貯金の目標立てをしよう</h1>
+        <div class="interest">
+            *積み立てる金額：
+            <input type="number" value="10000" id="addition" placeholder="金額" max="1000000000000">円
+            <button onclick="adjustAddition(100)">+100</button>
+            <button onclick="adjustAddition(-100)">-100</button>
+            <button onclick="adjustAddition(500)">+500</button>
+            <button onclick="adjustAddition(-500)">-500</button>
+            <button onclick="adjustAddition(1000)">+1,000</button>
+            <button onclick="adjustAddition(-1000)">-1,000</button>
+            <button onclick="adjustAddition(5000)">+5,000</button>
+            <button onclick="adjustAddition(-5000)">-5,000</button><br>
+            <button onclick="adjustAddition(10000)">+10,000</button>
+            <button onclick="adjustAddition(-10000)">-10,000</button>
+            <button onclick="adjustAddition(50000)">+50,000</button>
+            <button onclick="adjustAddition(-50000)">-50,000</button>
+            <button onclick="adjustAddition(100000)">+100,000</button>
+            <button onclick="adjustAddition(-100000)">-100,000</button>
+            <br>
+            *利率（整数）：
+            <input type="number" value="2" id="rate" placeholder="利率(%)">%<br/>
+            *年数：
+            <input type="number" value="10" id="years" placeholder="年数" min="1">年<br/>
+            目標額：
+            <input type="number" id="goal" placeholder="目標額" max="1000000000000">円<br/>
+            <button id="calcButton" onclick="calcInterest()">計算</button>
+        </div>
+        <table>
+            <thead>
+                <tr><th>年</th><th>金額</th></tr>
+            </thead>
+            <tbody id="result">
+            </tbody>
+        </table>
+        <p id="goalResult" class="goal"></p>
+
+        <div class="to-do">
+            <h2>やりたいことリスト</h2>
+            <input type="number" id="todoCost" placeholder="必要な金額" max="1000000000000">
+            <button onclick="adjustTodoCost(100)">+100</button>
+            <button onclick="adjustTodoCost(-100)">-100</button>
+            <button onclick="adjustTodoCost(500)">+500</button>
+            <button onclick="adjustTodoCost(-500)">-500</button>
+            <button onclick="adjustTodoCost(1000)">+1,000</button>
+            <button onclick="adjustTodoCost(-1000)">-1,000</button>
+            <button onclick="adjustTodoCost(5000)">+5,000</button>
+            <button onclick="adjustTodoCost(-5000)">-5,000</button><br>
+            <button onclick="adjustTodoCost(10000)">+10,000</button>
+            <button onclick="adjustTodoCost(-10000)">-10,000</button>
+            <button onclick="adjustTodoCost(50000)">+50,000</button>
+            <button onclick="adjustTodoCost(-50000)">-50,000</button>
+            <button onclick="adjustTodoCost(100000)">+100,000</button>
+            <button onclick="adjustTodoCost(-100000)">-100,000</button>
+            
+            <input type="text" id="todoInput" placeholder="やりたいことを入力">
+            <input type="number" id="todoPriority" placeholder="優先度（１〜１０の数字で入力）" min="1" max="10">
+            <button onclick="addTodo()">追加</button>
+            <ul id="todoList"></ul>
+            <p>合計金額：<span id="totalCost">0</span> 円</p>
+        </div>
+    </div>
+    <footer>
+        <p>
+            [ Special Thanks ]<br>
+            Main source: “あんこエデュケーション” https://anko.education/apps/savings<br>
+            Background: “BEIZ Graphics” https://www.beiz.jp/<br>
+            Code production assistance: “ChatGPT” https://chatgpt.com/
+        </p>
+    </footer>
+</body>
+</html>
+
+<!--
+    ☆中間発表後から追加したこと
+    ・背景色と、背景画像を追加した
+    ・フォントの色を変えた
+    ・コンマを追加した
+    ・計算を押すとやりたいことリストの削除ボタンが消えるのを直す
+    ・１００００以外にもボタンを追加して、やりたいことリストにも同じものをつけた
+    ・計算する年数を設定できるようにした
+    ・やりたいことリストで優先度をつけれるようにし、消費したお金の合計を表示した
+-->
+    
